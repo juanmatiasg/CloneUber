@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">CloneUber</string>
+    <string name="textViewEmail">tudireccion@hotmail.com</string>
+    <string name="textViewPassword">Password</string>
+    <string name="textViewButtonSignIn">Sign In</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
