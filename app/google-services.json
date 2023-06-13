@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1095669964967",
+    "project_id": "cloneuber-959f9",
+    "storage_bucket": "cloneuber-959f9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1095669964967:android:11606d9350a6411cb7fb82",
+        "android_client_info": {
+          "package_name": "com.example.cloneuber"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1095669964967-teeq6c416to53qaurq2iak43fmfvv28d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cloneuber",
+            "certificate_hash": "54a77dca63664104b3e43a9c7c8a33d8c5f04b07"
+          }
+        },
+        {
+          "client_id": "1095669964967-2fjt7liptgeufgknap04m9a1mdsfp06a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbO1GUpuCvEroYrVHQTC2U_5uwj7g-fNE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1095669964967-2fjt7liptgeufgknap04m9a1mdsfp06a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
