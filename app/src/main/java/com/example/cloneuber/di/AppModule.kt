@@ -1,9 +1,15 @@
 package com.example.cloneuber.di
 
-import com.example.cloneuber.data.repository.LoginRepository
-import com.example.cloneuber.data.repository.LoginRepositoryImpl
-import com.example.cloneuber.domain.usecases.LoginUseCase
+import android.app.Application
+import android.content.Context
+import com.example.cloneuber.data.repository.signin.SignInRepository
+import com.example.cloneuber.data.repository.signin.SignInRepositoryImpl
+import com.example.cloneuber.data.repository.signup.SignUpRepository
+import com.example.cloneuber.data.repository.signup.SignUpRepositoryImpl
+import com.example.cloneuber.domain.usecases.SignInUseCase
+import com.example.cloneuber.domain.usecases.SignUpUseCase
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,9 +24,33 @@ object AppModule {
     fun provideFirebaseAuth(): FirebaseAuth = FirebaseAuth.getInstance()
 
     @Provides
-    fun provideUserRepository(auth: FirebaseAuth): LoginRepository = LoginRepositoryImpl(auth)
+    fun provideFirebastore(): FirebaseFirestore = FirebaseFirestore.getInstance()
 
     @Provides
-    fun provideLoginUseCase(loginRepository: LoginRepository): LoginUseCase = LoginUseCase(loginRepository)
+    fun provideApplicationContext(application: Application): Context { return application.applicationContext}
+
+
+    //Sign In
+    @Provides
+    fun provideUserRepository(auth: FirebaseAuth): SignInRepository = SignInRepositoryImpl(auth)
+
+    @Provides
+    fun provideLoginUseCase(loginRepository: SignInRepository): SignInUseCase = SignInUseCase(loginRepository)
+
+    //Sign Up
+    @Provides
+    fun provideSignUpRepository(auth: FirebaseAuth,firestore: FirebaseFirestore):SignUpRepository = SignUpRepositoryImpl(auth,firestore)
+
+    @Provides
+    fun provideSignUpUseCase(signUpRepository: SignUpRepository):SignUpUseCase = SignUpUseCase(signUpRepository)
+
+
+    //Gallery Permission
+
+
+
+
+
+
 
 }

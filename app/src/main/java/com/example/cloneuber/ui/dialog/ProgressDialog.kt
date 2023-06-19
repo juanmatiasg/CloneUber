@@ -1,4 +1,4 @@
-package com.example.cloneuber.ui.progressDialog
+package com.example.cloneuber.ui.dialog
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

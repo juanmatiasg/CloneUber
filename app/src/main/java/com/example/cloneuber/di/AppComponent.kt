@@ -1,11 +1,11 @@
 package com.example.cloneuber.di
 
-import com.example.cloneuber.ui.login.LoginActivity
+import com.example.cloneuber.ui.login.SignInActivity
 import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [AppModule::class])
+@Component(modules = [AppModule::class,])
 interface AppComponent {
-    fun inject(loginActivity: LoginActivity)
+    fun inject(signInActvity: SignInActivity)
 }

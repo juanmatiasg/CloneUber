@@ -1,12 +1,12 @@
-package com.example.cloneuber.data.repository
+package com.example.cloneuber.data.repository.signin
 
-import com.example.cloneuber.data.model.User
+import com.example.cloneuber.domain.model.User
 import com.example.cloneuber.domain.model.Resource
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.coroutines.tasks.await
 
-class LoginRepositoryImpl(private val auth: FirebaseAuth) : LoginRepository {
+class SignInRepositoryImpl(private val auth: FirebaseAuth) : SignInRepository {
 
     override suspend fun signIn(email: String, password: String): Resource<User> {
         return try {
