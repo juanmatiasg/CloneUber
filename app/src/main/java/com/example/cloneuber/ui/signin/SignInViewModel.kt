@@ -1,4 +1,4 @@
-package com.example.cloneuber.ui.login
+package com.example.cloneuber.ui.signin
 
 import android.util.Patterns
 import androidx.lifecycle.*

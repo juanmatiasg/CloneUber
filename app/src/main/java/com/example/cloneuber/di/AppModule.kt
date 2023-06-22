@@ -2,10 +2,16 @@ package com.example.cloneuber.di
 
 import android.app.Application
 import android.content.Context
+import com.example.cloneuber.data.repository.home.GetUserRepository
+import com.example.cloneuber.data.repository.home.GetUserRepositoryImpl
+import com.example.cloneuber.data.repository.logout.LogoutRepository
+import com.example.cloneuber.data.repository.logout.LogoutRepositoryImpl
 import com.example.cloneuber.data.repository.signin.SignInRepository
 import com.example.cloneuber.data.repository.signin.SignInRepositoryImpl
 import com.example.cloneuber.data.repository.signup.SignUpRepository
 import com.example.cloneuber.data.repository.signup.SignUpRepositoryImpl
+import com.example.cloneuber.domain.usecases.GetUserDataUseCase
+import com.example.cloneuber.domain.usecases.LogoutUseCase
 import com.example.cloneuber.domain.usecases.SignInUseCase
 import com.example.cloneuber.domain.usecases.SignUpUseCase
 import com.google.firebase.auth.FirebaseAuth
@@ -32,10 +38,10 @@ object AppModule {
 
     //Sign In
     @Provides
-    fun provideUserRepository(auth: FirebaseAuth): SignInRepository = SignInRepositoryImpl(auth)
+    fun provideSignInRepository(auth: FirebaseAuth): SignInRepository = SignInRepositoryImpl(auth)
 
     @Provides
-    fun provideLoginUseCase(loginRepository: SignInRepository): SignInUseCase = SignInUseCase(loginRepository)
+    fun provideSignInUseCase(signInRepository: SignInRepository): SignInUseCase = SignInUseCase(signInRepository)
 
     //Sign Up
     @Provides
@@ -45,10 +51,20 @@ object AppModule {
     fun provideSignUpUseCase(signUpRepository: SignUpRepository):SignUpUseCase = SignUpUseCase(signUpRepository)
 
 
-    //Gallery Permission
+    //Home Activity
+    @Provides
+    fun provideGetUserUserRepository(auth:FirebaseAuth,firestore: FirebaseFirestore):GetUserRepository  = GetUserRepositoryImpl(auth,firestore)
+
+    @Provides
+    fun provideGetUserDataUseCase(getUserRepository: GetUserRepository): GetUserDataUseCase = GetUserDataUseCase(getUserRepository)
 
 
 
+    @Provides
+    fun provideLogoutRepository(auth:FirebaseAuth):LogoutRepository  = LogoutRepositoryImpl(auth)
+
+    @Provides
+    fun provideLogoutUseCase(logoutRepository: LogoutRepository): LogoutUseCase = LogoutUseCase(logoutRepository)
 
 
 

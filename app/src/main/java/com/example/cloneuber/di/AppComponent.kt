@@ -1,6 +1,6 @@
 package com.example.cloneuber.di
 
-import com.example.cloneuber.ui.login.SignInActivity
+import com.example.cloneuber.ui.signin.SignInActivity
 import dagger.Component
 import javax.inject.Singleton
 
