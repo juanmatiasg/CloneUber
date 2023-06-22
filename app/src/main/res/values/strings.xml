@@ -1,9 +1,8 @@
 <resources>
     <string name="app_name">CloneUber</string>
-    <string name="textViewEmail">email@hotmail.com</string>
+    <string name="textViewEmail">Email</string>
     <string name="textViewPassword">Password</string>
     <string name="textViewButtonSignIn">Sign In</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="textViewButtonSignUp">Sign Up</string>
     <string name="textViewSignUp">Sign Up</string>
@@ -15,4 +14,13 @@
     <string name="textViewDriver">Driver</string>
     <string name="showPermissionGalery">Se necesita los permisos para lanzar la galeria</string>
     <string name="textViewSignIn">Sign In</string>
+    <string name="textViewMap">Map</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="textViewLogout">Log Out</string>
+    <string name="loading">Loading...</string>
+    <string name="textViewDescriptionLogout">¿Estás seguro de que deseas cerrar sesión?</string>
+    <string name="textViewOK">Ok</string>
+    <string name="textViewCancel">Cancel</string>
+    <string name="textViewSuccessLogout">Cierre de Sesion exitoso</string>
 </resources>

@@ -9,8 +9,7 @@
     <!-- TODO: Update blank fragment layout -->
     <androidx.cardview.widget.CardView
         android:layout_width="150dp"
-        android:layout_height="150dp"
-        app:cardCornerRadius="20dp">
+        android:layout_height="150dp">
 
         <ProgressBar
             android:id="@+id/progressBar"

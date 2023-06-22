@@ -11,17 +11,11 @@ import com.example.cloneuber.R
 
 class ProgressDialog : DialogFragment() {
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        dialog?.window?.setBackgroundDrawableResource(R.drawable.dialog_rounded)
         return inflater.inflate(R.layout.fragment_dialog, container, false)
     }
 

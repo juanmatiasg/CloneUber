@@ -1,4 +1,4 @@
-package com.example.cloneuber.ui.login
+package com.example.cloneuber.ui.signin
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,10 +6,11 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
+import com.example.cloneuber.databinding.ActivitySignInBinding
 import com.example.cloneuber.domain.model.Resource
-import com.example.cloneuber.databinding.ActivityMainBinding
 import com.example.cloneuber.domain.model.User
 import com.example.cloneuber.ui.dialog.ProgressDialog
+import com.example.cloneuber.ui.home.HomeActivity
 import com.example.cloneuber.ui.signup.SignUpActivity
 import com.example.cloneuber.ui.util.hideKeyboard
 import com.example.cloneuber.ui.util.showToast
@@ -18,7 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class SignInActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivitySignInBinding
 
     private lateinit var progressDialog: ProgressDialog
     private lateinit var user: User
@@ -28,7 +29,7 @@ class SignInActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
         user = User()
 
@@ -63,7 +64,8 @@ class SignInActivity : AppCompatActivity() {
                 }
                 is Resource.Success -> {
                     progressDialog.dismiss()
-                    this.showToast("$it")
+                    navigateHome()
+                    //this.showToast("$it")
                 }
                 is Resource.Failure -> {
                     progressDialog.dismiss()
@@ -73,6 +75,8 @@ class SignInActivity : AppCompatActivity() {
         })
 
     }
+
+    private fun navigateHome() {startActivity(Intent(this,HomeActivity::class.java))}
 
     private fun signUp() {
         val intent = Intent(this, SignUpActivity::class.java)
